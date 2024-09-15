@@ -9,7 +9,7 @@ const HeaderPage = () => {
 
     return (
     
-    <div className='flex p-4 items-center justify-between bg-secondary shadow-sm'>
+    <div className='flex p-4 items-center justify-between bg-secondary shadow-sm h-24'>
         <Image  src={'/logo.png'} width={160} height={100} alt='LOGO' /> 
         <ul className='hidden  md:flex gap-6 ' >
             <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path== '/dashboard' && 'text-primary font-bold' } `} >DashBoard</li>

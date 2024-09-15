@@ -25,11 +25,13 @@ const FeedBack = ({ params }) => {
         setFeedbackList(result)
 
     };
+
     let count=0
     
     const rate=feedbackList.map((item)=>(
         count = count+ Number(item.rating) 
     ))
+   
 
 
 
@@ -42,15 +44,15 @@ const FeedBack = ({ params }) => {
             <h2 className='text-sm text-gray-500'>Find below interview question with correct answer , Your Answer and feedback For improvement</h2>
             {feedbackList && feedbackList.map((item, index) => (
                 <Collapsible key={index} className='mt-7'>
-                    <CollapsibleTrigger className='p-2 flex justify-between bg-secondary rounded-lg my-2 text-left gap-7 w-full'>{item.question}
+                    <CollapsibleTrigger className='p-2 flex justify-between bg-secondary rounded-lg my-2 text-left gap-7 w-full'>{item.questionDb}
                         <ChevronsUpDown className='h-5 w-5' />
                     </CollapsibleTrigger>
                     <CollapsibleContent>
                        <div className="flex flex-col gap-2">
                         <h2 className='text-red-500 p-2 border rounded-lg'><strong>Rating:</strong>{item.rating}</h2>
-                        <h2 className='p-2 border rounded-lg bg-red-50 text-blue-400 text-sm'><strong>Your Answer: {item.userAnswer}</strong></h2>
+                        <h2 className='p-2 border rounded-lg bg-red-50 text-blue-400 text-sm'><strong>Your Answer: {item.userAns}</strong></h2>
                         <h2 className='p-2 border rounded-lg bg-green-50  text-green-500 text-sm'><strong>Correct Answer: {item.correctAns}</strong></h2>
-                        <h2 className='p-2 border rounded-lg bg-blue-100  text-blue-600 text-sm'><strong>Feedback: {item.correctAns}</strong></h2>
+                        <h2 className='p-2 border rounded-lg bg-blue-100  text-blue-600 text-sm'><strong>Feedback: {item.feesback}</strong></h2>
                        </div>
                     </CollapsibleContent>
                 </Collapsible> 
@@ -58,9 +60,9 @@ const FeedBack = ({ params }) => {
 ))}
             <Link href={'/dashboard'}>
 
+            <Button className='my-8 '>Go Home</Button>
             </Link>
             </>}
-            <Button>Go Home</Button>
         </div>
     )
 }
